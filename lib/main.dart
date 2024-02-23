@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_store_animation/button_animated.dart';
 import 'package:flutter_store_animation/buy_animation.dart';
+import 'package:flutter_store_animation/test_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -11,7 +13,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: BuyAnimation(),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(useMaterial3: false),
+      home: TestScreen(),
     );
   }
 }
