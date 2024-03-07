@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_store_animation/button_animated.dart';
 import 'package:flutter_store_animation/buy_animation.dart';
+import 'package:flutter_store_animation/constants.dart';
 import 'package:flutter_store_animation/test_screen.dart';
 
 void main() {
@@ -14,8 +15,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(useMaterial3: false),
-      home: TestScreen(),
+      theme: ThemeData(
+        useMaterial3: false,
+        // primarySwatch: getMaterialColor(const Color(0xffffbd00))
+      ),
+      home: const TestScreen(),
     );
   }
 }

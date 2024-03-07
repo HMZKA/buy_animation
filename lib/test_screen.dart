@@ -1,5 +1,10 @@
-import 'package:flutter/material.dart';
+import 'dart:typed_data';
+import 'dart:ui';
+
+import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
+import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
 import 'package:flutter_store_animation/button_animated.dart';
+import 'package:flutter_store_animation/text_field.dart';
 
 class TestScreen extends StatelessWidget {
   const TestScreen({super.key});
@@ -7,22 +12,15 @@ class TestScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
-        body: SizedBox(
-            width: double.infinity,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                AnimatedButton(
-                  scaleAnimation: true,
-                  translateAnimation: true,
-                  margin: const EdgeInsets.only(bottom: 12.0),
-                  child: const Center(
-                    child: Text("Play Now",
-                        style: TextStyle(fontWeight: FontWeight.w600)),
-                  ),
-                ),
-              ],
-            )));
+        extendBodyBehindAppBar: true,
+        appBar: AppBar(
+          elevation: 0.0,
+          backgroundColor: Colors.transparent,
+        ),
+        body: Center(
+            child: MyTextField(
+          lable: Text("Email"),
+          hint: "example@example.com",
+        )));
   }
 }
